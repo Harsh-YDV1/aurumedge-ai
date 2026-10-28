@@ -145,6 +145,10 @@ def normalize_dataframe(
 
     result = df.copy()
     result["symbol"] = result["symbol"].astype(str).str.strip().str.upper()
+    if "trading_date" in result.columns:
+        result["trading_date"] = pd.to_datetime(result["trading_date"], errors="coerce")
+    if "expiry_date" in result.columns:
+        result["expiry_date"] = pd.to_datetime(result["expiry_date"], errors="coerce")
 
     # Merge on symbol
     specs_to_merge = master[

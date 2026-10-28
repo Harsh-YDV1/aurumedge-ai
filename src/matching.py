@@ -48,8 +48,10 @@ def find_available_expiries(df: pd.DataFrame, symbol_a: str, symbol_b: str) -> l
     df_a = df[df["symbol"] == symbol_a.upper()]
     df_b = df[df["symbol"] == symbol_b.upper()]
 
-    exp_a = set(df_a["expiry_date"].dropna().dt.strftime("%Y-%m-%d").unique())
-    exp_b = set(df_b["expiry_date"].dropna().dt.strftime("%Y-%m-%d").unique())
+    exp_a_series = pd.to_datetime(df_a["expiry_date"], errors="coerce").dropna()
+    exp_b_series = pd.to_datetime(df_b["expiry_date"], errors="coerce").dropna()
+    exp_a = set(exp_a_series.dt.strftime("%Y-%m-%d").unique())
+    exp_b = set(exp_b_series.dt.strftime("%Y-%m-%d").unique())
     return sorted(exp_a.intersection(exp_b))
 
 
