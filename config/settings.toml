@@ -1,0 +1,38 @@
+[app]
+name = "AurumEdge AI"
+tagline = "Beyond Gold Prices. Into Market Intelligence."
+version = "1.0.0"
+team = "Team Proxy"
+theme_primary = "#0A1128"
+theme_accent = "#D4AF37"
+theme_card = "#132238"
+
+[signals]
+rolling_window = 20
+z_score_threshold = 2.0
+exit_z_score = 0.5
+stop_loss_z = 3.5
+min_history_bars = 15
+mad_threshold = 2.5
+
+[filters]
+min_volume = 10
+min_open_interest = 20
+expiry_buffer_days = 3
+require_exact_expiry_match = true
+
+[costs]
+# MCX Commodity Transaction Cost Structure (Ex-brokerage & statutory levies)
+brokerage_pct = 0.0002           # 0.02% (2 bps) per turnover
+exchange_turnover_pct = 0.000021 # 0.0021% MCX turnover fee
+sebi_turnover_pct = 0.000001     # ₹10 per crore (0.0001%)
+ctt_sell_pct = 0.0001            # 0.01% on non-agri sell turnover
+stamp_duty_buy_pct = 0.00002     # 0.002% on buy turnover
+gst_pct = 0.18                   # 18% GST on (brokerage + exchange fee)
+slippage_ticks = 1.0             # 1 tick per leg slippage estimate
+
+[backtest]
+initial_capital = 1000000.0      # ₹1,000,000 base capital
+max_holding_days = 15            # Maximum calendar holding days before forced exit
+margin_pct = 0.12                # ~12% typical MCX gold margin requirement
+risk_free_rate_pct = 0.065       # 6.5% annual risk-free rate for Sharpe ratio

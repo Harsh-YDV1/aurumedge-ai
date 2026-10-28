@@ -1,0 +1,6 @@
+symbol,name,trading_unit_grams,quotation_unit_grams,purity_per_mille,tick_size,delivery_type,specification_source,notes
+GOLD,Gold (Standard 1kg),1000.0,10.0,995.0,1.0,Compulsory Delivery,MCX Official Bullion Specifications,Reference benchmark contract; 1kg lot; 995 purity
+GOLDM,Gold Mini,100.0,10.0,995.0,1.0,Compulsory Delivery,MCX Official Bullion Specifications,Most liquid retail lot; 100g lot; 995 purity
+GOLDTEN,Gold Ten,10.0,10.0,999.0,1.0,Compulsory Delivery,MCX Official Bullion Specifications,10g lot; 999 fineness (24k); quoted per 10g
+GOLDGUINEA,Gold Guinea,8.0,8.0,999.0,1.0,Compulsory Delivery,MCX Official Bullion Specifications,8g coin lot; 999 fineness; quoted per 8g
+GOLDPETAL,Gold Petal,1.0,1.0,999.0,1.0,Compulsory Delivery,MCX Official Bullion Specifications,Micro 1g lot; 999 fineness; quoted per 1g
